@@ -30,3 +30,28 @@
     transform: rotate(360deg);
   }
 }
+
+/* Ethan */
+
+.Header {
+  width: 100%; 
+  height: 100px; 
+  background: rgb(21, 117, 85); 
+  color: white; 
+  font-size: 72px; 
+  text-align: center; 
+}
+
+.Dashboard {
+  width: 50%; 
+  height: 100%;
+  margin-left: 25%; 
+  background: #0db15f; 
+}
+
+.Wizard {
+  width: 50%; 
+  height: 100%;
+  margin-left: 25%; 
+  background: #0db15f; 
+}
