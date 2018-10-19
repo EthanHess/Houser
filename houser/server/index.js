@@ -11,11 +11,11 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
     app.set('db', dbInstance); 
 }).catch(error => console.log('error connecting', error)); 
 
-// app.post('/api/inventory', controller.create);
-// app.get('/api/inventory', controller.getAll);
-// app.get('/api/inventory/:id', controller.getOne);
-// app.put('/api/inventory/:id', controller.update);
-// app.delete('/api/inventory/:id', controller.delete);
+app.post('/api/houses', controller.create);
+app.get('/api/houses', controller.getAll);
+app.get('/api/houses/:id', controller.getOne);
+app.put('/api/houses/:id', controller.update);
+app.delete('/api/houses/:id', controller.delete);
 
 const port = process.env.PORT || 4000; 
 app.listen(port, () => {
