@@ -14,13 +14,20 @@ export default class Dashboard extends Component {
         this.state = {
             houses: []
         }
+        this.deleteHouse = this.deleteHouse.bind(this); 
     }
-    
+
     componentDidMount() {
         axios.get("/api/houses").then(response => {
             this.setState({ houses: response.data })
         }).catch(error => { 
             console.log('--- Dashboard fetch error ---', error)
+        })
+    }
+
+    deleteHouse(id) {
+        axios.delete(`/api/houses/${id}`).then(response => {
+            this.setState({ houses: response.data })
         })
     }
 
@@ -31,8 +38,13 @@ export default class Dashboard extends Component {
                 <Link to='/wizard' className='links'>Add New Property</Link>
                { this.state.houses.map(house => (
                    <div>
-                     console.log(house) 
-                     <House/>
+                     <House deleteFn={this.deleteHouse}
+                     id={house.id}
+                     name={house.name}
+                     address={house.address}
+                     city={house.city}
+                     state={house.state}
+                     zipcode={house.zipcode}/>
                    </div>
                 ))} 
             </div>
